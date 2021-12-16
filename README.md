@@ -73,7 +73,7 @@ When a message fails, it will be published back to the end of the queue, so, ass
 
 ## Using the `ExponentialBackoffHandler`
 
-With this handler every retry is delayed by a power of 2 on the attempt number. The retry attempt is inserted into a new queue with a naming convention of `<queue name>.retry.<delay>`.
+With this handler every retry is delayed by a power of 2 on the attempt number. The retry attempt is inserted into a new queue with a naming convention of `<queue name>.<delay>.retry`.
 After exhausting the maximum number of retries (`max_retries`), the message will be moved into the dead letter exchange.
 
 ![backoff](https://github.com/alphasights/sneakers_handlers/blob/master/docs/backoff.png)
