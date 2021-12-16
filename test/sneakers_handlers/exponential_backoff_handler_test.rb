@@ -236,7 +236,7 @@ class SneakersHandlers::ExponentialBackoffHandlerTest < Minitest::Test
   private
 
   def retry_queue(count)
-    channel.queue("sneakers_handlers.exponential_backoff_test.retry.#{count}",
+    channel.queue("sneakers_handlers.exponential_backoff_test.#{count}.retry",
       durable: false,
       arguments: {
         :"x-dead-letter-exchange" => "sneakers_handlers",
