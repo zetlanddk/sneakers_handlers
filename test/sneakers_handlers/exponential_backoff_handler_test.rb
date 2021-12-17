@@ -266,8 +266,8 @@ class SneakersHandlers::ExponentialBackoffHandlerTest < Minitest::Test
     [FailingWorker].each do |worker|
       channel.queue_delete(worker.queue_name)
       channel.queue_delete(worker.queue_name + ".error")
-      channel.queue_delete(worker.queue_name + "1.retry")
-      channel.queue_delete(worker.queue_name + "4.retry")
+      channel.queue_delete(worker.queue_name + ".1.retry")
+      channel.queue_delete(worker.queue_name + ".4.retry")
     end
   end
 end
